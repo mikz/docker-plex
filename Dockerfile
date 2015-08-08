@@ -9,14 +9,12 @@ RUN apt-get -y update \
  && apt-get -y remove wget \
  && apt-get -y autoremove \
  && apt-get -y clean \
- && rm -r /var/lib/apt/lists plexmediaserver_*.deb
-
-# Modify the launch script to not spawn shell, so remove subshell and add exec
-RUN sed -i 's:(\(.\+;\)\(.\+\)):\1 exec\2:' /usr/sbin/start_pms
+ && rm -r /var/lib/apt/lists plexmediaserver_*.deb \
+ && sed -i 's:(\(.\+;\)\(.\+\)):\1 exec\2:' /usr/sbin/start_pms
 
 USER plex
 
-VOLUME /usr/lib/plexmediaserver/
+VOLUME /var/lib/plexmediaserver/
 WORKDIR /var/lib/plexmediaserver/
 
 EXPOSE 32400
