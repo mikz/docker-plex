@@ -14,6 +14,7 @@ RUN apt-get -y update \
 
 USER plex
 
+ENV LD_LIBRARY_PATH=/usr/lib/plexmediaserver
 VOLUME /var/lib/plexmediaserver/
 WORKDIR /var/lib/plexmediaserver/
 
