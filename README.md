@@ -3,8 +3,8 @@
 Create two dockers. One will just have a volume with configuration and the other will actually run.
 
 ```shell
-docker create  --net=host --restart=no --name plex-config  quay.io/mikz/plex
-docker create --hostname=yourname --restart=always --name plex --volumes-from=plex-config --volume /mnt/storage:/mnt/storage quay.io/mikz/plex
+docker create --net=host --restart=no --name plex-config  quay.io/mikz/plex
+docker create --hostname=yourname --restart=unless-stopped --name plex --volumes-from=plex-config --volume /mnt/storage:/mnt/storage quay.io/mikz/plex
 ```
 
 Why? Because you can easily upgrade.
