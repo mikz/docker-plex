@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV PLEX_VERSION=0.9.16.4.1911-ee6e505
+ENV PLEX_VERSION=0.9.16.6.1993-5089475
 
 RUN apt-get -y update \
  && apt-get -y install wget \
