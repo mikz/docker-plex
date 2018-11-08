@@ -1,5 +1,5 @@
 FROM debian:jessie
-ARG PLEX_VERSION=1.13.5.5332-21ab172de
+ARG PLEX_VERSION=1.13.9.5456-ecd600442
 
 RUN apt-get -y update && apt-get -y upgrade \
  && apt-get -y install wget \
