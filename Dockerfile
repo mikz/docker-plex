@@ -1,9 +1,10 @@
-FROM debian:jessie
-ARG PLEX_VERSION=1.15.2.793-782228f99
+FROM debian:stable
+ARG PLEX_VERSION=1.15.3.858-fbfb913f7
 
-RUN apt-get -y update && apt-get -y upgrade \
+RUN set -x; \
+ apt-get -y update && apt-get -y upgrade \
  && apt-get -y install wget \
- && wget -q https://downloads.plex.tv/plex-media-server/${PLEX_VERSION}/plexmediaserver_${PLEX_VERSION}_amd64.deb \
+ && wget -q https://downloads.plex.tv/plex-media-server-new/${PLEX_VERSION}/debian/plexmediaserver_${PLEX_VERSION}_amd64.deb \
  && dpkg --install plexmediaserver_${PLEX_VERSION}_amd64.deb \
  && apt-get -y remove wget \
  && apt-get -y autoremove --purge \
