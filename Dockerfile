@@ -1,5 +1,5 @@
 FROM debian:stable
-ARG PLEX_VERSION=1.15.3.858-fbfb913f7
+ARG PLEX_VERSION=1.15.4.994-107756f7e
 
 RUN set -x; \
  apt-get -y update && apt-get -y upgrade \
